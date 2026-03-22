@@ -1,0 +1,61 @@
+package com.example.socialspark
+
+import android.annotation.SuppressLint
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId", "WrongViewCast")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        // 1. Link UI components to the kotlin code using the IDs
+        val btnSuggest = findViewById<Button>(R.id.btnSuggest)
+        val btnReset = findViewById<Button>(R.id.btnReset)
+        val editTextTime = findViewById<EditText>(R.id.editTextTime)
+        val txtsuggestion = findViewById<TextView>(R.id.txtsuggestion)
+        
+        // 2. Logic for the "Suggest" button
+        btnSuggest.setOnClickListener {
+            // Get user input, remove extra spaces, and convert to lowercase for comparison
+            val input = editTextTime.text.toString().trim().lowercase()
+            // MANDATORY LOGGING: This shows the marker you understand how to track app behavior
+            Log.d("SocialSpark", "User entered time: $input")
+            
+            // 3. Conditional logic for all 6 social Sparks
+            // Logic inspired by Gemini AI's brainstorming for varied social interaction
+            val suggestion = if (input == "morning") {
+                "Send a 'Good morning' text to a family member"
+            } else if (input == "mid-morning") {
+                "Reach out to a colleague with a 'Thank you' note"
+            } else if (input == "afternoon") {
+                "Share a funny meme or interesting link with a friend"
+            } else if (input == "snack time") {
+                "Post a photo of your snack and tag a friend!"
+            } else if (input == "dinner") {
+                "Call a relative for 5-minute catch-up while cooking"
+            } else if (input == "after dinner") {
+                "Send a message to a group chat about your favorite part of the day"
+            } else {
+                // Message to display if the input doesn't match the 6 categories
+                "Please enter: morning, mid-morning, afternoon, snack time, dinner, or after dinner."
+            }
+            
+            // Update the TextView with the result of the conditional logic
+            txtsuggestion.text = suggestion
+        }
+
+        // 4. Logic for the "Reset" button to clear fields
+        btnReset.setOnClickListener {
+            editTextTime.text.clear()
+            txtsuggestion.text = ""
+
+        }
+    }
+}
