@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener
+import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId", "WrongViewCast")
@@ -30,21 +32,29 @@ class MainActivity : AppCompatActivity() {
             
             // 3. Conditional logic for all 6 social Sparks
             // Logic inspired by Gemini AI's brainstorming for varied social interaction
-            val suggestion = if (input == "morning") {
-                "Send a 'Good morning' text to a family member"
-            } else if (input == "mid-morning") {
-                "Reach out to a colleague with a 'Thank you' note"
-            } else if (input == "afternoon") {
-                "Share a funny meme or interesting link with a friend"
-            } else if (input == "snack time") {
-                "Post a photo of your snack and tag a friend!"
-            } else if (input == "dinner") {
-                "Call a relative for 5-minute catch-up while cooking"
-            } else if (input == "after dinner") {
-                "Send a message to a group chat about your favorite part of the day"
-            } else {
-                // Message to display if the input doesn't match the 6 categories
-                "Please enter: morning, mid-morning, afternoon, snack time, dinner, or after dinner."
+            val suggestion = when (input) {
+                "morning" -> {
+                    "Send a 'Good morning' text to a family member"
+                }
+                "mid-morning" -> {
+                    "Reach out to a colleague with a 'Thank you' note"
+                }
+                "afternoon" -> {
+                    "Share a funny meme or interesting link with a friend"
+                }
+                "snack time" -> {
+                    "Post a photo of your snack and tag a friend!"
+                }
+                "dinner" -> {
+                    "Call a relative for 5-minute catch-up while cooking"
+                }
+                "after dinner" -> {
+                    "Send a message to a group chat about your favorite part of the day"
+                }
+                else -> {
+                    // Message to display if the input doesn't match the 6 categories
+                    "Please enter: morning, mid-morning, afternoon, snack time, dinner, or after dinner."
+                }
             }
             
             // Update the TextView with the result of the conditional logic
@@ -56,6 +66,13 @@ class MainActivity : AppCompatActivity() {
             editTextTime.text.clear()
             txtsuggestion.text = ""
 
-        }
-    }
-}
+            setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+               val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+               v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+               insets
+
+
+
+       }
+    }}}
+
