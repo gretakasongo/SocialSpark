@@ -23,9 +23,15 @@
         android:id="@+id/btnSuggest"
         android:layout_width="122dp"
         android:layout_height="66dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="616dp"
+        android:layout_marginEnd="242dp"
+        android:layout_marginBottom="49dp"
         android:text="Suggest"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="616dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnReset"
