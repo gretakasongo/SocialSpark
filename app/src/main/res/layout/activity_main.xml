@@ -7,40 +7,52 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txtsuggestion"
-        android:layout_width="149dp"
-        android:layout_height="95dp"
-        android:text="Suggestion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editTextTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="661dp"
         android:ems="10"
         android:inputType="text"
         android:text="Time"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="34dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnSuggest"
-        android:layout_width="117dp"
-        android:layout_height="67dp"
+        android:layout_width="122dp"
+        android:layout_height="66dp"
         android:text="Suggest"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="578dp" />
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="616dp" />
 
     <Button
         android:id="@+id/btnReset"
-        android:layout_width="128dp"
-        android:layout_height="67dp"
+        android:layout_width="126dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="616dp"
+        android:layout_marginBottom="49dp"
         android:text="Reset"
-        tools:layout_editor_absoluteX="248dp"
-        tools:layout_editor_absoluteY="578dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnSuggest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtsuggestion"
+        android:layout_width="140dp"
+        android:layout_height="116dp"
+        android:text="Suggestion"
+        app:layout_constraintBottom_toTopOf="@+id/btnSuggest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

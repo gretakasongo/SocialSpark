@@ -17,6 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        /*
+        * AI Usage Declaration:
+        * This code was developed by me.
+        * I used Gemini AI (Google) and ChatGPT fpr brainstorming ideas and understanding logic.
+        * No code was copied directly from AI.
+        *
+        * Tool: Gemini AI (Google) and ChatGPT (OpenAI)
+        * Purpose: Brainstorming and logic clarification
+        * Date accessed: March 2026
+         */
         // 1. Link UI components to the kotlin code using the IDs
         val btnSuggest = findViewById<Button>(R.id.btnSuggest)
         val btnReset = findViewById<Button>(R.id.btnReset)
